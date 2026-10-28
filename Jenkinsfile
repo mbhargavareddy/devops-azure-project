@@ -37,11 +37,24 @@ pipeline {
                 '''
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    docker rm -f devops-flask-app || true
+                    docker run -d \
+                        --name devops-flask-app \
+                        --restart unless-stopped \
+                        -p 5000:8000 \
+                        devops-flask-app:latest
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'SUCCESS: Build, tests, and Docker image creation completed!'
+            echo 'SUCCESS: Build, tests, Docker image, and deployment completed!'
         }
         failure {
             echo 'FAILED: Check Console Output for the error.'
