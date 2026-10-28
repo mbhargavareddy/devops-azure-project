@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+*.py[cod]
+test-results.xml
+# Terraform: never commit state or real variable values
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+terraform.tfvars
+backend.tf

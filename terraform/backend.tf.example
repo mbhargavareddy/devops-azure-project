@@ -1,0 +1,13 @@
+# OPTIONAL: remote state in Azure Storage (shows "state management").
+# 1. Create the storage once (commands are in README.md, section "Remote state").
+# 2. Copy this file to backend.tf (it is gitignored).
+# 3. Run: terraform init -migrate-state
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-tfstate"
+    storage_account_name = "REPLACE_WITH_YOUR_STORAGE_ACCOUNT_NAME"
+    container_name       = "tfstate"
+    key                  = "devops-project.tfstate"
+  }
+}

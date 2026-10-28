@@ -1,0 +1,12 @@
+# Copy this file to terraform.tfvars and fill in your own values.
+# terraform.tfvars is in .gitignore so it is never uploaded to GitHub.
+
+subscription_id = "00000000-0000-0000-0000-000000000000"  # from: az account show --query id -o tsv
+web_app_suffix  = "yourinitials01"                        # lowercase letters/numbers, must be unique worldwide
+docker_image    = "YOUR_DOCKERHUB_USERNAME/devops-flask-app:latest"
+
+project_name = "devopsflask"
+environment  = "production"
+location     = "centralindia"
+sku_name     = "B1"
+app_version  = "1.0.0"

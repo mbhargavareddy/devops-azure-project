@@ -1,0 +1,8 @@
+.git
+terraform
+tests
+report
+jenkins
+__pycache__
+*.pyc
+.venv
